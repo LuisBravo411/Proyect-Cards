@@ -66,5 +66,76 @@ btnsCounter.forEach(function(btnCounter){
 
 // Fin Carta #2 Counter
 // -----------------------------------------------------------------------------------------------------
-// Carta #3 Calculadora
+// Carta #3 Objetos Casas
 
+const reviewCasa = [
+    {
+        id: 1,
+        img: "img/casa_1.jpg",
+        title: "Casa numero 1",
+        metrosCuadrados: "400",
+        numHabitaciones: "7",
+        desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla saepe officiis cumque et deleniti quasi numquam, libero magnam quia quo voluptatibus similique, delectus soluta placeat velit quidem minima, maiores illum?"
+    },
+    {
+        id: 2,
+        img: "img/casa_2.jpg",
+        title: "Casa numero 2",
+        metrosCuadrados: "200",
+        numHabitaciones: "4",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid possimus aut aspernatur deleniti, quod autem nihil ratione sunt in sed."
+    },
+    {
+        id: 3,
+        img: "img/casa_3.jpeg",
+        title: "Casa numero 3",
+        metrosCuadrados: "150",
+        numHabitaciones: "5",
+        desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur repudiandae veniam quae placeat deleniti dolorem."
+    }   
+]
+
+const imgCasa = document.getElementById("casaImg");
+const titleCasa = document.querySelector(".titleCasa");
+const metrosCuadrados = document.querySelector(".metros-cuadrados");
+const numHabitaciones = document.querySelector(".habitaciones");
+const descCasa = document.querySelector(".descCasa");
+
+// const btnCasaR = document.querySelector(".btn-casa-r");
+// const btnCasaL = document.querySelector(".btn-casa-l");
+
+const btnCasaR = document.getElementById("btnCasaL");
+const btnCasaL = document.getElementById("btnCasaR");
+let currentId = 0;
+
+window.addEventListener("load", function(){
+    currentId = Math.floor(Math.random() * reviewCasa.length);
+    showItem(currentId);
+})
+
+function showItem(currentItem){
+    const item = reviewCasa[currentItem];
+    // console.log(currentId)
+    imgCasa.src = item.img;
+    titleCasa.textContent = item.title;
+    metrosCuadrados.textContent = item.metrosCuadrados;
+    numHabitaciones.textContent = item.numHabitaciones;
+    descCasa.textContent = item.desc;
+}
+
+btnCasaR.addEventListener("click", function(){
+    // console.log("log");
+    currentId++;
+    if(currentId > reviewCasa.length - 1){
+        currentId = 0;
+    }
+    showItem(currentId)
+})
+
+btnCasaL.addEventListener("click", function(){
+    currentId--;
+    if(currentId < 0){
+        currentId = reviewCasa.length - 1
+    }
+    showItem(currentId)
+})
