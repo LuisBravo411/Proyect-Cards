@@ -163,3 +163,37 @@ main {
     font-family: var(--ff-secondary);
 }
 /* Carta #2 Counter */
+
+/* carta #3 Casa */
+.objetsCasa{
+    font-size: 15px;
+}
+.objetsCasa img{
+    width: 100%;
+    height: 200px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.infoCasas{
+    width: 90%;
+    margin: 0 auto;
+    color: #222;
+}
+.infoCasas p{
+    font-weight: 700;
+}
+.infoCasas span{
+    font-weight: 400;
+}
+.titleCasa{
+    margin: 10px 0;
+    text-transform: uppercase;
+    font-size: 22px;
+}
+
+.container-btn-casa{
+    display: flex;
+    justify-content: space-around;
+    margin: 8px 0;
+}
